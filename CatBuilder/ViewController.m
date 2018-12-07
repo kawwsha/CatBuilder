@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Cat.h"
 
 @interface ViewController ()
 
@@ -16,7 +17,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+
+    [self testCat];
+}
+
+- (void)testCat {
+    Cat *cat = [[Cat alloc] initWithName:@"White Coffee Cat" andAge:4];
+//    NSLog(@"%@", cat.name);
+//    NSLog(@"%lu", cat.age);
+//    NSLog(@"%lu", cat.ageInHumanYears);
+    NSLog(@"%@", cat);
 }
 
 

@@ -8,31 +8,39 @@
 
 #import "Cat.h"
 
+@interface Cat ()
+
+@property (nonatomic, strong, readwrite) NSString *name; // Readwrite
+@property (nonatomic, assign, readwrite) NSUInteger age; // Readwrite
+
+@end
+
 @implementation Cat
 
-- (instancetype) initWithName:(NSString *)name andAge:(NSUInteger)age
-{
+#pragma mark - Initializers
+- (instancetype)initWithName:(NSString *)name andAge:(NSUInteger)age {
     self = [super init];
-    if (self)
-    {
-        //Directly access ivar; don't use self!
+    if (self) {
         _name = name;
         _age = age;
     }
-    //Return type will never be nil b/c NSObj will never be nil | technically nullable
     return self;
 }
 
-- (NSString *) meow
-{
-    NSString *meow = @"MEOWWWWW";
-    return meow;
+#pragma mark - Public Methods
+- (NSString *)meow {
+    return @"MEOWWWWW";
 }
 
-- (NSUInteger) getAgeInHumanYears
-{
-    _ageInHumanYears = self.age * 7;
-    return _ageInHumanYears;
+#pragma mark - Getters
+- (NSUInteger)ageInHumanYears {
+    return self.age * 7;
+}
+
+#pragma mark - Overrides
+- (NSString *)description {
+    return [NSString stringWithFormat:@"Name: %@, Age: %lu, Age in Human Years: %lu",
+            self.name, self.age, self.ageInHumanYears];
 }
 
 @end

@@ -10,17 +10,13 @@
 
 @interface Cat : NSObject
 
-@property (nonatomic, strong) NSString *name;
+@property (nonatomic, strong, readonly, nonnull) NSString *name;
+@property (nonatomic, assign, readonly) NSUInteger age;
+@property (nonatomic, assign, readonly) NSUInteger ageInHumanYears;
 
-@property (nonatomic, assign) NSUInteger age;
-
-@property (nonatomic, assign) NSUInteger ageInHumanYears;
-
-- (NSString *)meow;
-
-- (instancetype)initWithName:(NSString *)name andAge:(NSUInteger)age;
-
-- (NSUInteger)getAgeInHumanYears;
+- (nonnull instancetype)init NS_UNAVAILABLE;
+- (nonnull instancetype)initWithName:(nonnull NSString *)name andAge:(NSUInteger)age;
+- (nonnull NSString *)meow;
 
 @end
 
