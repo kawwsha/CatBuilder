@@ -15,8 +15,14 @@
 @property (nonatomic, assign, readonly) NSUInteger ageInHumanYears;
 
 - (nonnull instancetype)init NS_UNAVAILABLE;
-- (nonnull instancetype)initWithName:(nonnull NSString *)name andAge:(NSUInteger)age;
+- (nonnull instancetype)initWithName:(nonnull NSString *)name andAge:(NSUInteger)age NS_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)initWithName:(nonnull NSString *)name;
+
 - (nonnull NSString *)meow;
 
 @end
 
+/// Cat *myNewCatMelka = [[Cat alloc] initWithName:@"Melka" andAge:1];
+// (Can't do): myNewCatMelka.age = 243567;
+// (Can't do): myNewCatMelka.ageInHumanYears = 1;
+// NSLog(@" %@ ", myNewCatMelka)

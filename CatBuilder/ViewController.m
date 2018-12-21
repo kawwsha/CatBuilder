@@ -23,9 +23,6 @@
 
 - (void)testCat {
     Cat *cat = [[Cat alloc] initWithName:@"White Coffee Cat" andAge:4];
-//    NSLog(@"%@", cat.name);
-//    NSLog(@"%lu", cat.age);
-//    NSLog(@"%lu", cat.ageInHumanYears);
     NSLog(@"%@", cat);
 }
 

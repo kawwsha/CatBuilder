@@ -18,6 +18,10 @@
 @implementation Cat
 
 #pragma mark - Initializers
+- (instancetype)initWithName:(NSString *)name {
+    return [self initWithName:name andAge:0];
+}
+
 - (instancetype)initWithName:(NSString *)name andAge:(NSUInteger)age {
     self = [super init];
     if (self) {
